@@ -1,0 +1,136 @@
+/* styles.css */
+:root {
+  --primary-color: #FFE4B5; /* Light Peach */
+  --secondary-color: #FFE5B4; /* Peach */
+  --accent-color: #704214; /* Sepia */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+}
+
+/* Header and Navigation */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(255, 228, 181, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 80px;
+  transition: transform 0.3s ease-in-out;
+}
+
+header.hide {
+  transform: translateY(-100%);
+}
+
+header.scrolled {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--accent-color);
+  transition: transform 0.3s;
+}
+
+header .logo:hover {
+  transform: scale(1.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--accent-color);
+  position: relative;
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--accent-color);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+  background-color: rgba(255, 229, 180, 0.2);
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--secondary-color);
+}
+
+/* Back-to-Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  transform: scale(1.1);
+}

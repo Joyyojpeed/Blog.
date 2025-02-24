@@ -1,0 +1,28 @@
+/* information.css */
+/* Information Content */
+.info-content {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.info-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.info-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.info-content ul {
+  list-style: none;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.info-content li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}

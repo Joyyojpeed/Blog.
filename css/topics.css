@@ -1,0 +1,145 @@
+/* topics.css */
+/* Main Content Padding for Fixed Header */
+main {
+  padding-top: 100px; /* Adjust based on header height */
+  background-color: var(--secondary-color); /* Consistent background color */
+}
+
+/* Swiper Carousel */
+.swiper-container {
+  width: 100%;
+  height: 80%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: row; /* Stack content vertically */
+  align-items: flex-start; /* Align content to the top */
+  background-color: var(--secondary-color); /* Consistent background color */
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.swiper-slide img {
+  width: 20%; /* Adjust image width */
+  border-radius: 10px;
+  border: 2px solid var(--accent-color);
+  margin: 10px 0; /* Add spacing around images */
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide img:hover {
+  transform: scale(1.05);
+}
+
+/* Text and image inline layout */
+.image-text-group {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  margin-bottom: 20px; /* Add spacing between groups */
+}
+
+.image-text-group img {
+  width: 40%; /* Adjust image width */
+  margin-right: 20px; /* Add spacing between image and text */
+}
+
+.image-text-group.reverse {
+  flex-direction: row-reverse; /* Reverse layout for alternating images */
+}
+
+.image-text-group.reverse img {
+  margin-right: 0;
+  margin-left: 20px; /* Add spacing between image and text */
+}
+
+/* Text styling */
+.swiper-slide .content {
+  width: 100%; /* Full width for text */
+  padding: 0; /* Remove padding to align text properly */
+  background-color: var(--secondary-color); /* Consistent background color */
+}
+
+.swiper-slide .content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  animation: fadeInDown 1s ease;
+}
+
+.swiper-slide .content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333; /* Consistent text color */
+  animation: fadeInUp 1s ease;
+}
+
+/* Navigation Arrows */
+.swiper-button-next, .swiper-button-prev {
+  color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .image-text-group {
+    flex-direction: column; /* Stack image and text vertically on small screens */
+  }
+
+  .image-text-group img {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px; /* Add spacing between image and text */
+  }
+
+  .image-text-group.reverse {
+    flex-direction: column; /* Stack image and text vertically on small screens */
+  }
+
+  .image-text-group.reverse img {
+    margin-left: 0;
+    margin-bottom: 10px; /* Add spacing between image and text */
+  }
+}
